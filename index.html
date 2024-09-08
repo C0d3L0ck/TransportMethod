@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Métodos de Transporte</title>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 10px;
+            text-align: center;
+        }
+        .table-container {
+            margin-bottom: 20px;
+        }
+    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-blue-100">
+
+    <header class="">
+    <h1 class="flex justify-center font-bold text-blue-500 p-3 text-7xl">Métodos de Transporte</h1>
+    </header>
+
+    <p class="text-center p-2 font-medium text-2xl">Un contratista debe acarrear gravar a tres construcciones desde dos 
+        bancos de materiales, uno al norte y otro al sur de la ciudad. Las
+        construcciones requieren 10, 5, 10 metros cúbicos del agregado, 
+        respectivamente. En el banco hay disponibles 18 metros cúbicos, 
+        mientras que en el sur hay 14. Los costos por metros cubico acarreada 
+        desde los orígenes a los posibles destinos son (en cientos de pesos)</p>
+        <br>
+
+        <p class="text-center p-2 font-medium text-2xl">Aplicar los modelos o métodos vistos en clase (Costo minimo, esquina noroeste 
+            y aproximación de Vogel) para resolver el problema y presenta la mejor 
+            solución identificando el método utilizado para obtenerla. Redacta una 
+            conclusión del procedimiento y del resultado obtenido.</p>
+
+    <div class="table-container">
+        <h2 class="text-xl pt-4">Datos de Entrada:</h3>
+
+        <div class="flex justify-center ">
+        <table>
+            <thead class="bg-cyan-950 text-stone-50">
+                <tr>
+                    <th>Obra</th>
+                    <th>Banco Norte</th>
+                    <th>Banco Sur</th>
+                    <th>Requerimiento</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="bg-cyan-950 text-stone-50 font-bold">Obra 1</td>
+                    <td ><input type="number" id="costo11" value="3"></td>
+                    <td><input type="number" id="costo12" value="6"></td>
+                    <td><input type="number" id="req1" value="10"></td>
+                </tr>
+                <tr>
+                    <td class="bg-cyan-950 text-stone-50 font-bold">Obra 2</td>
+                    <td><input type="number" id="costo21" value="6"></td>
+                    <td><input type="number" id="costo22" value="3"></td>
+                    <td><input type="number" id="req2" value="5"></td>
+                </tr>
+                <tr>
+                    <td class="bg-cyan-950 text-stone-50 font-bold">Obra 3</td>
+                    <td><input type="number" id="costo31" value="5"></td>
+                    <td><input type="number" id="costo32" value="4"></td>
+                    <td><input type="number" id="req3" value="10"></td>
+                </tr>
+            </tbody>
+        </table>
+        </div>
+
+        <div class="flex justify-center p-2">
+        <p class="p-3">
+            Suministro Banco Norte:  <input class=" " type="number" id="supplyNorte" value="18"></p>
+           <p class="p-3"> Suministro Banco Sur:  <input type="number" id="supplySur" value="14"> </p>
+        </div>
+
+    </div>
+
+    <button class="bg-blue-400 p-3 rounded-md hover:bg-blue-500" onclick="calcularCostoMinimo()">Calcular Costo Mínimo</button>
+    <button class="bg-blue-400 p-3 rounded-md hover:bg-blue-500" onclick="calcularRinconNoroeste()">Calcular Rincón Noroeste</button>
+    <button class="bg-blue-400 p-3 rounded-md hover:bg-blue-500" onclick="calcularVogel()">Calcular Aproximación de Vogel</button>
+
+    <h3>Iteraciones del Método de Costo Mínimo:</h3>
+    <div id="iteracionesCostoMinimo"></div>
+    <h3>Resultado Final:</h3>
+    <pre id="resultadoFinal"></pre>
+
+    <h3>Iteraciones del Método de Rincón Noroeste:</h3>
+    <div id="iteracionesRinconNoroeste"></div>
+    <h3>Resultado Final:</h3>
+    <pre id="resultadoRinconNoroeste"></pre>
+
+    <h3>Iteraciones del Método de Aproximación de Vogel:</h3>
+    <div id="iteracionesVogel"></div>
+    <h3>Resultado Final:</h3>
+    <pre id="resultadoVogel"></pre>
+
+    <script src="script.js"></script>
+</body>
+</html>
